@@ -8,6 +8,7 @@ import { dateFormateDbToView } from "../../../Utils/stringFunctions";
 // importa a biblioteca de tootips ()
 import "react-tooltip/dist/react-tooltip.css";
 import { Tooltip } from "react-tooltip";
+import { Link } from "react-router-dom";
 
 // import trashDelete from "../../../assets/images/trash-delete.svg";
 
@@ -41,9 +42,9 @@ const Table = ({ dados, fnDelete = null, fnUpdate = null }) => {
         {dados.map((tp) => {
           return (
             <tr className="table-data__head-row" key={tp.idEvento}>
-              <td className="table-data__data table-data__data--big">
+              <Link className="table-data__data table-data__data--big" to={"/detalhes"}>
                 {tp.nomeEvento}
-              </td>
+              </Link>
               <td
                 className="table-data__data table-data__data--big table-data__data--handover"
                 data-tooltip-id="description-tooltip"

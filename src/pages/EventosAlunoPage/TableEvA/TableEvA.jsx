@@ -8,6 +8,7 @@ import "react-tooltip/dist/react-tooltip.css";
 
 // import trashDelete from "../../../assets/images/trash-delete.svg";
 import "./TableEvA.css";
+import { Link } from "react-router-dom";
 
 const Table = ({ dados, fnConnect = null, fnShowModal = null }) => {
   return (
@@ -29,9 +30,9 @@ const Table = ({ dados, fnConnect = null, fnShowModal = null }) => {
         {dados.map((e) => {
           return (
             <tr className="tbal-data__head-row" key={Math.random()}>
-              <td className="tbal-data__data tbal-data__data--big">
+              <Link className="tbal-data__data tbal-data__data--big" to="/detalhes">
                 {e.nomeEvento}
-              </td>
+              </Link>
 
               <td className="tbal-data__data tbal-data__data--big tbal-data__btn-actions">
                 {/* {e.dataEvento} */}
